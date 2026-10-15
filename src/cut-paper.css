@@ -1,0 +1,42 @@
+/* Cut-paper visual language used across every site page. */
+body { --paper: #fff4db; --ink: #33344b; --muted: #55546a; --line: #a79d91; background: #f0e2d2; }
+.voronoi-background { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
+.profile-picture, .identity-mark, .entry-content { border-radius: 0; }
+.profile-picture { flex: 0 0 176px; width: 176px; height: 176px; padding: 9px; background: #f8d17f; clip-path: polygon(20% 6%, 72% 0, 100% 25%, 94% 78%, 69% 100%, 13% 91%, 0 45%); border: 0; box-shadow: none; filter: drop-shadow(10px 10px 0 #485e93); }
+.identity-mark { clip-path: polygon(20% 0, 78% 8%, 100% 42%, 84% 90%, 34% 100%, 0 64%); transform: none; border-radius: 0; background: #ed7955; color: #263045; }
+.index { border: 0; padding: 0; min-width: 42px; width: 42px; height: 42px; flex: 0 0 42px; justify-content: center; align-self: center; background: var(--accent); color: white; clip-path: polygon(23% 2%, 77% 0, 100% 43%, 80% 96%, 25% 100%, 0 54%); }
+.timeline-nav-star, .timeline-nav a.is-active .timeline-nav-star { background: var(--paper); }
+.links a:hover, .links [aria-current="page"] { color: var(--c0); }
+.entry-content { background: color-mix(in srgb, var(--tint) 45%, var(--paper)); border: 1px solid var(--line); border-top: 4px solid var(--accent); }
+.overview-row { border: 1px solid var(--line); margin-bottom: 9px; padding: 20px; background: color-mix(in srgb, var(--tint) 38%, var(--paper)); }
+.overview-row:last-child { border-bottom: 1px solid var(--line); }
+.overview-row:hover { padding-left: 20px; background: color-mix(in srgb, var(--tint) 70%, var(--paper)); }
+.section-title h2, .page-title h1 { display: inline-block; padding: 8px 22px; background: #f8d17f; clip-path: polygon(0 8%, 94% 0, 100% 78%, 12% 100%, 0 85%); }
+.section-title h2 a span { color: var(--ink); }
+.back { padding: 10px 18px; background: #b8d2b9; clip-path: polygon(0 12%, 90% 0, 100% 85%, 8% 100%); color: var(--ink); }
+footer { background: #fff6e5e8; padding-inline: 18px; clip-path: polygon(0 9%, 100% 0, 100% 100%, 0 100%); }
+.timeline-nav a.is-active { background: #f7d4a8; clip-path: polygon(0 0, 94% 0, 100% 80%, 0 100%); }
+.timeline-nav-star { background: transparent; }
+.identity { position: relative; isolation: isolate; margin: 55px 0 60px; padding: 48px 38px; background: #f8a76e; clip-path: polygon(0 10%, 75% 0, 100% 12%, 96% 95%, 20% 100%, 0 87%); }
+.identity::before { content: ""; position: absolute; z-index: -1; inset: 0; background: #c6b2e5; clip-path: polygon(69% 0, 100% 0, 100% 100%, 81% 100%, 90% 52%); }
+.identity-mark { background: #485e93; color: white; }
+.overview-row { background: var(--tint); border: 0; box-shadow: 7px 7px 0 #343e5a35; margin-bottom: 19px; clip-path: polygon(0 0, 96% 0, 100% 30%, 100% 100%, 5% 100%, 0 82%); }
+.overview-row:nth-child(3n + 2) { clip-path: polygon(0 7%, 4% 0, 100% 0, 100% 83%, 94% 100%, 0 100%); }
+.overview-row:nth-child(3n) { clip-path: polygon(0 0, 92% 0, 100% 16%, 100% 100%, 7% 100%, 0 88%); }
+.overview-row:hover { background: color-mix(in srgb, var(--tint) 70%, white); }
+.overview-row:last-child { border: 0; }
+.entry-content { background: var(--tint); border: 0; box-shadow: 8px 8px 0 #343e5a35; clip-path: polygon(0 0, 96% 0, 100% 9%, 100% 100%, 0 100%); }
+.entry:nth-child(even) .entry-content { clip-path: polygon(0 0, 100% 0, 100% 100%, 6% 100%, 0 88%); }
+.entry:nth-child(3n) .entry-content { clip-path: polygon(0 8%, 5% 0, 100% 0, 100% 100%, 0 100%); }
+@media (prefers-reduced-motion: reduce) {
+  body, body::before { animation: none; }
+}
+@media (max-width: 760px) {
+  .timeline-nav { background: var(--paper); }
+  .identity { padding: 35px 20px; margin: 25px 0 45px; }
+  .profile-picture { flex-basis: 96px; width: 96px; height: 96px; padding: 6px; }
+  .overview-row { padding: 14px; }
+}
+@media (max-width: 480px) {
+  .profile-picture { flex-basis: 76px; width: 76px; height: 76px; padding: 5px; }
+}
