@@ -25,3 +25,6 @@ This project turned out to be much harder than I initially expected. Since this 
 had to be as robust as possible. Perception systems often give false positives or miss cones entirely, or the cones may just be set up poorly, and
 I had to account for all of those different factors. Our perception also did not detect cone colors, so I was also missing a crucial signal that helped distinguish where cones belonged on the track. Setting up a good evaluation system was crucial in me being confident that I could deliver something
 which wouldn't immediately fail when something unexpected happens.
+
+![Sensor cart](/media/sensor_cart.mp4)
+*Sensor cart demo*

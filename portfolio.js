@@ -35,6 +35,22 @@ function parseEntry(source, kind) {
 function renderMarkdown(body, fileURL) {
   const template = document.createElement("template");
   template.innerHTML = marked.parse(body);
+  for (const image of [...template.content.querySelectorAll("img[src]")]) {
+    let url;
+    try {
+      url = new URL(image.getAttribute("src"), fileURL);
+    } catch {
+      continue;
+    }
+    if (url.pathname.toLowerCase().endsWith(".mp4")) {
+      const video = document.createElement("video");
+      video.src = url.href;
+      video.controls = true;
+      video.preload = "metadata";
+      video.setAttribute("aria-label", image.getAttribute("alt") || "Video");
+      image.replaceWith(video);
+    }
+  }
   for (const element of template.content.querySelectorAll(
     "script, object, embed",
   )) {
